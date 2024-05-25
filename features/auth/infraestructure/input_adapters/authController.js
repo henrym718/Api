@@ -16,6 +16,7 @@ class AuthController {
 
     async loginCredentials(req, res, next) {
         try {
+
             const { email, password } = req.body;
             const { refreshToken } = await this.loginCredentialsUseCase.execute({ email, password })
             const refreshTokenOptions = { httpOnly: true, secure: true, sameSite: "none", maxAge: 24 * 60 * 60 * 1000 }

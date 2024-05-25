@@ -7,15 +7,15 @@ class AwsRepository {
         this.s3Client = new S3Client({
             region: process.env.AWS_REGION,
             credentials: {
-                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-                secretAccessKey: process.env.AWS_SECRECT_ACCESS_KEY,
+                accessKeyId: "xxx",
+                secretAccessKey: "xxx",
             }
         })
     }
 
     async uploadFile(file) {
         const putObjectParams = {
-            Bucket: process.env.BUCKET,
+            Bucket: process.env.AWS_BUCKET,
             Key: file.filename,
             Body: file.buffer
         }
@@ -24,7 +24,7 @@ class AwsRepository {
 
         /**obtener la url del file */
         const getObjectParams = {
-            Bucket: "apijob",
+            Bucket: process.env.AWS_BUCKET,
             Key: file.filename,
         };
         return await getSignedUrl(this.s3Client, new GetObjectCommand(getObjectParams));
@@ -32,7 +32,7 @@ class AwsRepository {
 
     async deleteFile(filename) {
         const deleteObjectParams = {
-            Bucket: "apijob",
+            Bucket: process.env.AWS_BUCKET,
             key: filename
         }
         await this.s3Client.send(new DeleteObjectCommand(deleteObjectParams))

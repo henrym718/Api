@@ -17,6 +17,10 @@ class ProductRepository {
         return await this.productMoongoseRepository.getProductsByTags(field)
     }
 
+    async getProductsWithFilter(filter, optionOrder, skipCount, perPage) {
+        return await this.productMoongoseRepository.getProductsWithFilter(filter, optionOrder, skipCount, perPage)
+    }
+
 
 }
 

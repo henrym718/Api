@@ -4,7 +4,6 @@ class ChekIsAuthenticatedUseCase {
     }
 
     async execute(email) {
-        console.log({ email })
         const auth = await this.authService.getAuthByfield({ email })
         console.log(auth)
         if (auth) {

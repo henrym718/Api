@@ -2,7 +2,7 @@ import { asClass } from "awilix"
 import { container } from "./container.js"
 
 import GetCurrentUserByCookieUseCase from '../../features/user/application/getUser/getCurrentUserByCookieUseCase.js';
-import CreateUserUseCase from './../../features/user/application/createUser/createUserUseCase.js';
+import CreateUserUseCase from '../../features/user/application/createUser/createUserUseCase.js';
 
 import UserController from '../../features/user/infraestructure/input_adapters/userController.js';
 

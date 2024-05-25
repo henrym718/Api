@@ -3,8 +3,9 @@ import { Schema, model } from "mongoose"
 const productSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     title: String,
+    group: String,
     category: String,
-    subcategory: String,
+    location: String,
     tags: [String],
     price: { type: Number, default: 0 },
     aboutGig: String,
@@ -18,6 +19,6 @@ const productSchema = new Schema({
     timestamps: false,
     versionKey: false
 })
-const productModel = model("Product", productSchema)
+const productModel = model("Gig", productSchema)
 
 export default productModel 

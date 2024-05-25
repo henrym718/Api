@@ -29,7 +29,6 @@ container.register({
         .inject(() => ({ authRepository: container.resolve("authRepository") }))
         .singleton()
 
-
 })
 
 /*userService */

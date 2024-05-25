@@ -9,6 +9,7 @@ class ImageController {
     async uploadFile(req, res, next) {
         try {
             const url = await this.uploadImageUseCase.execute(req?.file)
+
             res.status(200).json(url)
         } catch (error) {
             next(error);

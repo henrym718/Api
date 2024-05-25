@@ -1,6 +1,6 @@
 import ProductService from '../../domain/services/productService.js'
 
-class SearchProductsUseCase {
+class GetProductsTagsUseCase {
     constructor() {
         this.productService = new ProductService()
     }
@@ -21,4 +21,4 @@ class SearchProductsUseCase {
     }
 }
 
-export default SearchProductsUseCase
+export default GetProductsTagsUseCase

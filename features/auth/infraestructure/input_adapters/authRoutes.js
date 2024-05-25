@@ -1,7 +1,7 @@
 // Importamos el módulo de Express para crear el router
 import express from "express";
 const router = express.Router();
-import { validator } from './../../../../shared/data/validator.js';
+import { validator } from '../../../../middleware/data/validatorData.js';
 import * as data from "./authValidateData.js"
 
 // Importamos el contenedor de Awilix para resolver las dependencias
